@@ -9,5 +9,5 @@ RUN geth init ./genesis.json \
     && echo ${ACCOUNT_PASSWORD} > ./password.txt \
     && geth account new --password ./password.txt \
     && rm -f ./password.txt
-
+EXPOSE 8545 8546 30303 30303/udp
 ENTRYPOINT ["geth"]

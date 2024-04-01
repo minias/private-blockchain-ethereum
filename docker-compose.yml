@@ -13,7 +13,6 @@ services:
       --nodekeyhex="37d571faed3af03f8302e1ddb940ca2f13010a1acf9443ba1507b93e5b36fcbd" 
       --nodiscover 
       -verbosity 4
-      --ipcdisable 
       --networkid=${NETWORK_ID} 
       --netrestrict="172.16.254.0/28"
     networks:
@@ -30,6 +29,8 @@ services:
     command:
       --bootnodes="enode://749bac3705e7d0c92c27ace288d911cf2798538edcb46a3f9d058093c80c3533be6668df41ecb1174dd9cf22c39b6c5ed7e0f1aa53ef7928679b506f80b0268e@vlt-bootnode:30303"
       --allow-insecure-unlock
+      --unlock 0
+      --password=./password.txt
       --http
       --http.addr="0.0.0.0"
       --http.api="eth,web3,net,admin,personal"
